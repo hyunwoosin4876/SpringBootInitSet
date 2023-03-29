@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<included>
+	<timestamp key="byDay" datePattern="yyyyMMdd" />
+
+
+	<appender name="ROLLING-FILE" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">			
+			<charset>${FILE_LOG_CHARSET}</charset>
+			<pattern>${FILE_LOG_PATTERN}</pattern>
+		</encoder>
+
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${LOG_FILE_PATH}/${LOG_FILE_NAME}_${byDay}.log</fileNamePattern>
+		</rollingPolicy>
+	</appender>
+</included>
