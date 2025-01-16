@@ -1,24 +1,24 @@
-package com.example.SpringBootInitSet.bizlogic.SpringBootInitSet.service.impl;
+package com.example.demo.bizlogic.demo.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.example.SpringBootInitSet.bizlogic.SpringBootInitSet.dao.SpringBootInitSetDAO;
-import com.example.SpringBootInitSet.bizlogic.SpringBootInitSet.dto.request.SpringBootInitSetReqDTO;
-import com.example.SpringBootInitSet.bizlogic.SpringBootInitSet.dto.response.SpringBootInitSetResDTO;
-import com.example.SpringBootInitSet.bizlogic.SpringBootInitSet.service.SpringBootInitSetService;
+import com.example.demo.bizlogic.demo.dao.DemoDAO;
+import com.example.demo.bizlogic.demo.dto.request.DemoReqDTO;
+import com.example.demo.bizlogic.demo.dto.response.DemoResDTO;
+import com.example.demo.bizlogic.demo.service.DemoService;
 
 import lombok.extern.slf4j.Slf4j;
 
 @Service
 @Slf4j
-public class SpringBootInitSetServiceImpl implements SpringBootInitSetService {
+public class DemoServiceImpl implements DemoService {
 	
 	@Autowired
-	private SpringBootInitSetDAO SpringBootInitSetDAO;
+	private DemoDAO demoDAO;
 	
 	@Override
-	public SpringBootInitSetResDTO SpringBootInitSet(SpringBootInitSetReqDTO paramDTO) throws Exception {
+	public DemoResDTO demo(DemoReqDTO paramDTO) throws Exception {
 		return null;
 	}
 	

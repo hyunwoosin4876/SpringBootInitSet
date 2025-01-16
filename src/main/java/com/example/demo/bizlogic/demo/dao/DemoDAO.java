@@ -1,10 +1,10 @@
-package com.example.SpringBootInitSet.bizlogic.SpringBootInitSet.dao;
+package com.example.demo.bizlogic.demo.dao;
 
 import org.springframework.stereotype.Repository;
 
-import com.example.SpringBootInitSet.bizlogic.SpringBootInitSet.dto.response.SpringBootInitSetResDTO;
+import com.example.demo.bizlogic.demo.dto.response.DemoResDTO;
 
 @Repository
-public interface SpringBootInitSetDAO {
-	public SpringBootInitSetResDTO selectTest() throws Exception;
+public interface DemoDAO {
+	public DemoResDTO selectTest() throws Exception;
 }

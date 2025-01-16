@@ -1,8 +1,8 @@
-package com.example.SpringBootInitSet.bizlogic.SpringBootInitSet.service;
+package com.example.demo.bizlogic.demo.service;
 
-import com.example.SpringBootInitSet.bizlogic.SpringBootInitSet.dto.request.SpringBootInitSetReqDTO;
-import com.example.SpringBootInitSet.bizlogic.SpringBootInitSet.dto.response.SpringBootInitSetResDTO;
+import com.example.demo.bizlogic.demo.dto.request.DemoReqDTO;
+import com.example.demo.bizlogic.demo.dto.response.DemoResDTO;
 
-public interface SpringBootInitSetService {
-	public SpringBootInitSetResDTO SpringBootInitSet(SpringBootInitSetReqDTO paramDTO) throws Exception;
+public interface DemoService {
+	public DemoResDTO demo(DemoReqDTO paramDTO) throws Exception;
 }

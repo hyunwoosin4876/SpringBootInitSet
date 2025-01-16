@@ -1,8 +1,8 @@
-package com.example.SpringBootInitSet.bizlogic.SpringBootInitSet.dto.request;
+package com.example.demo.bizlogic.demo.dto.request;
 
 import lombok.Data;
 
 @Data
-public class SpringBootInitSetReqDTO {
+public class DemoReqDTO {
 
 }

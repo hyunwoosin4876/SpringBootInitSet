@@ -1,4 +1,4 @@
-package com.example.SpringBootInitSet.framework;
+package com.example.demo.framework;
 
 public class Constances {
 	public static String SpringBootInitSet_STR = "";

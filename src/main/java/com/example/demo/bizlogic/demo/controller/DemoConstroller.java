@@ -1,21 +1,21 @@
-package com.example.SpringBootInitSet.bizlogic.SpringBootInitSet.controller;
+package com.example.demo.bizlogic.demo.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.SpringBootInitSet.bizlogic.SpringBootInitSet.dto.request.SpringBootInitSetReqDTO;
-import com.example.SpringBootInitSet.bizlogic.SpringBootInitSet.dto.response.SpringBootInitSetResDTO;
-import com.example.SpringBootInitSet.bizlogic.SpringBootInitSet.service.SpringBootInitSetService;
+import com.example.demo.bizlogic.demo.dto.request.DemoReqDTO;
+import com.example.demo.bizlogic.demo.dto.response.DemoResDTO;
+import com.example.demo.bizlogic.demo.service.DemoService;
 
 import io.swagger.annotations.ApiOperation;
 
 @RestController
-public class SpringBootInitSetConstroller {
+public class DemoConstroller {
 	
 	@Autowired
-	private SpringBootInitSetService domeService; // test service
+	private DemoService domeService; // test service
 	
 	/**
 	 * 테스트
@@ -25,7 +25,7 @@ public class SpringBootInitSetConstroller {
 	 */
 	@ApiOperation(value="test", notes="test")
 	@RequestMapping(value="/SpringBootInitSet/test", method={RequestMethod.POST})
-	public SpringBootInitSetResDTO SpringBootInitSet(SpringBootInitSetReqDTO paramDTO) throws Exception {
-		return domeService.SpringBootInitSet(paramDTO);
+	public DemoResDTO SpringBootInitSet(DemoReqDTO paramDTO) throws Exception {
+		return domeService.demo(paramDTO);
 	}
 }

@@ -1,8 +1,8 @@
-package com.example.SpringBootInitSet.bizlogic.SpringBootInitSet.dto.response;
+package com.example.demo.bizlogic.demo.dto.response;
 
 import lombok.Data;
 
 @Data
-public class SpringBootInitSetResDTO {
+public class DemoResDTO {
 
 }

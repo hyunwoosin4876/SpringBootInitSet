@@ -1,4 +1,4 @@
-package com.example.SpringBootInitSet.framework.sawgger;
+package com.example.demo.framework.sawgger;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
