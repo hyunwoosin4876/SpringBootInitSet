@@ -6,9 +6,9 @@
 	<include resource="logback-logger.xml"/>
 
 	<!-- SERVER FOR FILE PATH-->
-	<property name="LOG_FILE_PATH_LOCAL" value="C:/SpringBootInitSet/log/" />
-	<!--<property name="LOG_FILE_PATH_DEV" value="" />-->
-	<!--<property name="LOG_FILE_PATH_PROD" value="" />-->
+	<property name="LOG_FILE_PATH" value="C:/SpringBootInitSet/log/" />
+	<!-- <property name="LOG_FILE_PATH" value="C:/SpringBootInitSet/log/" /> -->
+	<!-- <property name="LOG_FILE_PATH" value="C:/SpringBootInitSet/log/" /> -->
 	<!-- FILE NAME -->
 	<property name="LOG_FILE_NAME" value="SpringBootInitSet" />
 
