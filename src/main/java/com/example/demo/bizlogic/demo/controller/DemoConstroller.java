@@ -1,17 +1,23 @@
 package com.example.demo.bizlogic.demo.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.bizlogic.demo.dto.request.DemoReqDTO;
 import com.example.demo.bizlogic.demo.dto.response.DemoResDTO;
 import com.example.demo.bizlogic.demo.service.DemoService;
 
-import io.swagger.annotations.ApiOperation;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
+import io.swagger.v3.oas.annotations.tags.Tag;
 
+@Tag(name = "예제 API", description = "Swagger 테스트용 API")
 @RestController
+@RequestMapping("/")
 public class DemoConstroller {
 	
 	@Autowired
@@ -23,9 +29,10 @@ public class DemoConstroller {
 	 * @return
 	 * @throws Exception
 	 */
-	@ApiOperation(value="test", notes="test")
-	@RequestMapping(value="/SpringBootInitSet/test", method={RequestMethod.POST})
-	public DemoResDTO SpringBootInitSet(DemoReqDTO paramDTO) throws Exception {
+    @Operation(summary = "테스트 메소드", description = "테스트 메소드 입니다.")
+    //@Parameter(name = "str", description = "2번 반복할 문자열")
+	@GetMapping(value="/SpringBootInitSet/test")
+	public List<DemoResDTO> SpringBootInitSet(DemoReqDTO paramDTO) throws Exception {
 		return domeService.demo(paramDTO);
 	}
 }
