@@ -5,10 +5,19 @@ spring:
     jmx:
         enabled: true
     datasource:
-        driver-class-name: org.mariadb.jdbc.Driver
-        url: jdbc:mariadb://127.0.0.1:3306/react_board_test
-        username: reactUserTester
-        password: 4682
+        hikari:
+            driver-class-name: org.mariadb.jdbc.Driver
+            jdbc-url: jdbc:mariadb://127.0.0.1:3306/react_board_test
+            username: reactUserTester
+            password: 4682
+            minimum-idle: 5
+            maximum-pool-size: 10
+            idle-timeout: 30000
+            pool-name: DevLogHikariCP
+            max-lifetime: 200000
+            connection-timeout: 30000
+            connection-test-query: /*CONNECTION TEST QUERY*/SELECT NOW() FROM DUAL
+
 mybatis:
     mapper-locations: classpath:mapper/**/*.xml
       

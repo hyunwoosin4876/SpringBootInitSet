@@ -30,6 +30,8 @@ dependencies {
 	// spring boot
 	implementation 'org.springframework.boot:spring-boot-starter-test'
 	
+	// hikari
+	implementation group: 'com.zaxxer', name: 'HikariCP', version:'5.0.0'
     
     // mybatis
 	implementation group: 'org.mybatis.spring.boot', name: 'mybatis-spring-boot-starter', version: '3.0.1'
