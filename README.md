@@ -1,8 +1,13 @@
 # SpringBootInitSet
 
-※ SpringBoot + Gradle + log4j2
-1. Spring boot 기본 셋팅 진행중
+1. Back-End 
+   - SpringBoot : ver 3.x.x
+   - Gradle
    - log4j 
    - Swagger
-   - DB
-   
+   - DB(mariaDB)
+   - hikari
+   - mybatis
+      
+2. Fornt-End
+   - React 

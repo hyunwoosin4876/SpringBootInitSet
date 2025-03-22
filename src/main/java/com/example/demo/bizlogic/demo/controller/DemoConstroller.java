@@ -12,8 +12,8 @@ import com.example.demo.bizlogic.demo.dto.response.DemoResDTO;
 import com.example.demo.bizlogic.demo.service.DemoService;
 
 import io.swagger.v3.oas.annotations.Operation;
-import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import reactor.core.publisher.Flux;
 
 @Tag(name = "예제 API", description = "Swagger 테스트용 API")
 @RestController
@@ -32,7 +32,9 @@ public class DemoConstroller {
     @Operation(summary = "테스트 메소드", description = "테스트 메소드 입니다.")
     //@Parameter(name = "str", description = "2번 반복할 문자열")
 	@GetMapping(value="/SpringBootInitSet/test")
-	public List<DemoResDTO> SpringBootInitSet(DemoReqDTO paramDTO) throws Exception {
-		return domeService.demo(paramDTO);
+	public Flux<DemoResDTO> SpringBootInitSet(DemoReqDTO paramDTO) throws Exception {
+    	List<DemoResDTO> list = domeService.demo(paramDTO);
+		// return Flux.just(list);
+    	return Flux.fromIterable(list);
 	}
 }
