@@ -17,7 +17,7 @@ import reactor.core.publisher.Flux;
 
 @Tag(name = "예제 API", description = "Swagger 테스트용 API")
 @RestController
-@RequestMapping("/")
+@RequestMapping("/SpringBootInitSet")
 public class DemoConstroller {
 	
 	@Autowired
@@ -30,8 +30,7 @@ public class DemoConstroller {
 	 * @throws Exception
 	 */
     @Operation(summary = "테스트 메소드", description = "테스트 메소드 입니다.")
-    //@Parameter(name = "str", description = "2번 반복할 문자열")
-	@GetMapping(value="/SpringBootInitSet/test")
+	@GetMapping(value="/test")
 	public Flux<DemoResDTO> SpringBootInitSet(DemoReqDTO paramDTO) throws Exception {
     	List<DemoResDTO> list = domeService.demo(paramDTO);
 		// return Flux.just(list);
