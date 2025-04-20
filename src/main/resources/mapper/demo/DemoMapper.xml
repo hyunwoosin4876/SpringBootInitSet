@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.example.demo.bizlogic.demo.mapper.DemoMapper">
+<mapper namespace="com.example.demo.bizlogic.mapper.demo.DemoMapper">
 	<select id="selectBoard" 
-				parameterType="com.example.demo.bizlogic.demo.dto.request.DemoReqDTO" 
-				resultType="com.example.demo.bizlogic.demo.dto.response.DemoResDTO">
+				parameterType="com.example.demo.bizlogic.model.demo.Demo" 
+				resultType="com.example.demo.bizlogic.model.demo.Demo">
 		SELECT SEQ AS seq
 			, TITLE AS title
 			, CONTENT AS content

@@ -1,40 +1,45 @@
 package com.example.demo.framework.security;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.security.config.Customizer;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig {
+	
+	@Autowired
+	private UserDetailsService CustomUserDetailsService;
 
-    @Bean
-    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        http
-            .authorizeHttpRequests(auth -> auth
-                .requestMatchers("/admin/**").hasRole("ADMIN")
-                .requestMatchers("/user/**").hasRole("USER")
-                .requestMatchers("/login/**").permitAll()
-                .requestMatchers("/swagger-ui/**").permitAll()
-                .anyRequest().authenticated()
-            )
-            .formLogin(form -> form
-            		.loginPage("/login")
-            		.loginProcessingUrl("/loginProc")
-            		.usernameParameter("id")
-            		.passwordParameter("password")
-            		.defaultSuccessUrl("/")
-            		.failureUrl("/login?error=true")
-            ) // 기본 로그인 폼
-            .logout(logout -> logout
-            		.logoutUrl("/logoutProc")
-            		.logoutSuccessUrl("/login?logout=true")
-            ) // 로그아웃 설정
-            .csrf().disable(); // 개발 중엔 비활성화 가능
+	@Bean
+	public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+		http.authorizeHttpRequests(auth -> auth
+				.requestMatchers("/admin/**").hasRole("ADMIN")
+				.requestMatchers("/user/**").hasRole("USER")
+				.requestMatchers("/login/**").permitAll()
+				.requestMatchers("/swagger-ui/**").permitAll()
+				.anyRequest().authenticated()
+		).formLogin().disable();
 
-        return http.build();
+		return http.build();
+	}
+
+	@Bean
+	public AuthenticationManager authManager(HttpSecurity http) throws Exception {
+		return http.getSharedObject(AuthenticationManagerBuilder.class).userDetailsService(CustomUserDetailsService)
+				.passwordEncoder(passwordEncoder()).and().build();
+	}
+	
+	@Bean
+    public PasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
     }
 }

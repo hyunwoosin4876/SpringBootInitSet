@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.bizlogic.mapper.user.UserMapper">
+	<select id="selMember"
+			parameterType="com.example.demo.bizlogic.model.user.User"
+			resultType="com.example.demo.bizlogic.model.user.User"
+	>
+		SELECT /* 회원 상세 정보 */ 
+			MEMBER_SN AS memberSn
+			, MEMBER_ID AS memberId
+			, MEMBER_PW AS memberPw
+			, MEMBER_NAME AS memberName
+			, MEMBER_SEX AS memberSex
+			, MEMBER_AGE AS memberAge
+			, MEMBER_AUTH AS memberAuth
+			, USE_YN AS useYn
+			, REG_ID AS regId
+			, REG_DT AS regDt
+			, UPD_ID AS updId
+			, UPD_DT AS updDt
+		FROM member
+		WHERE MEMBER_ID = #{memberId}
+	</select>
+</mapper>
