@@ -2,8 +2,8 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.demo.bizlogic.mapper.user.UserMapper">
 	<select id="selMember"
-			parameterType="com.example.demo.bizlogic.model.user.User"
-			resultType="com.example.demo.bizlogic.model.user.User"
+			parameterType="com.example.demo.bizlogic.user.model.User"
+			resultType="com.example.demo.bizlogic.user.model.User"
 	>
 		SELECT /* 회원 상세 정보 */ 
 			MEMBER_SN AS memberSn

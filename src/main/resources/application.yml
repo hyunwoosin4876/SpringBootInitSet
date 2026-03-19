@@ -17,7 +17,11 @@ spring:
             max-lifetime: 200000
             connection-timeout: 30000
             connection-test-query: /*CONNECTION TEST QUERY*/SELECT NOW() FROM DUAL
-        
+    thymeleaf:
+      cache: false   # 개발 시 캐시 끔
+      prefix: classpath:/templates/
+      suffix: .html
+    
 mybatis:
     mapper-locations: classpath:mapper/**/*.xml
       
