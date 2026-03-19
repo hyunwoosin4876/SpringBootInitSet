@@ -31,35 +31,39 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-test'
 	// spring webflux
 	implementation 'org.springframework.boot:spring-boot-starter-webflux'
-    implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 		
 	// hikari
 	implementation group: 'com.zaxxer', name: 'HikariCP', version:'5.0.0'
-    
-    // mybatis
+	
+	// mybatis
 	implementation group: 'org.mybatis.spring.boot', name: 'mybatis-spring-boot-starter', version: '3.0.1'
 	// MyBatis Core 의존성
-    implementation 'org.mybatis:mybatis:3.5.10'
-    // MyBatis-Spring 의존성 (Spring과 통합을 위한)
-    implementation 'org.mybatis.spring:mybatis-spring:2.0.6'
+	implementation 'org.mybatis:mybatis:3.5.10'
+	// MyBatis-Spring 의존성 (Spring과 통합을 위한)
+	implementation 'org.mybatis.spring:mybatis-spring:2.0.6'
 	
-    // embed tomcat
-    implementation group: 'org.apache.tomcat.embed', name:'tomcat-edbed-jasper'
-    
-    // swagger - springdoc use
+	// spring security
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+	implementation 'io.jsonwebtoken:jjwt:0.9.1'
+	
+	// embed tomcat
+	implementation group: 'org.apache.tomcat.embed', name:'tomcat-edbed-jasper'
+	
+	// swagger - springdoc use
 	// implementation group: 'org.springdoc', name: 'springdoc-openapi-ui', version: '1.8.0'
 	implementation 'org.springdoc:springdoc-openapi-ui:2.1.0'
 	implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.0.2'
 	
-    // log
-    implementation group: 'org.bgee.log4jdbc-log4j2', name : 'log4jdbc-log4j2-jdbc4', version: '1.16'
+	// log
+	implementation group: 'org.bgee.log4jdbc-log4j2', name : 'log4jdbc-log4j2-jdbc4', version: '1.16'
 	
-	// jdbc 설정    
+	// jdbc 설정	
 	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-jdbc'
 	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-data-jdbc'
-    // runtimeOnly 'mysql:mysql-connector-java'
-    
-    // mariadb
+	// runtimeOnly 'mysql:mysql-connector-java'
+	
+	// mariadb
 	implementation 'org.mariadb.jdbc:mariadb-java-client:2.7.3'
 }
