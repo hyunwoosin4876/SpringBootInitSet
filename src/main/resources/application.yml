@@ -44,7 +44,7 @@ logging:
         console: "[%d{HH:mm:ss.SSS}][%-5level][%logger.%method:line%line] - %msg%n"
         file: "[%d{HH:mm:ss.SSS}][%-5level][%logger.%method:line%line] - %msg%n"
     file:    
-        name: C:/logs/demo.log    
+        name: C:/logs/demo.log
         max-history: 30
     level:
         org:
